@@ -33,17 +33,17 @@ document.getElementById("P").innerHTML = "Pole trójkąta wynosi: " + P;
 
 // zadanie 3
 
-// let L = prompt("podaj liczbę od 1 do 10:");
-// let rand = Math.ceil(Math.random() * 10);
-//
-// console.log("Wylosowana liczba to: " + rand);
-// console.log("wybrana liczna to: " + L);
-//
-// if (rand == L) {
-//   document.getElementById("ans").innerHTML = "Brawo!";
-// } else {
-//   document.getElementById("ans").innerHTML = "Spróbuj jeszcze raz";
-// }
+let L = prompt("podaj liczbę od 1 do 10:");
+let rand = Math.ceil(Math.random() * 10);
+
+console.log("Wylosowana liczba to: " + rand);
+console.log("wybrana liczna to: " + L);
+
+if (rand == L) {
+  document.getElementById("ans").innerHTML = "Brawo!";
+} else {
+  document.getElementById("ans").innerHTML = "Spróbuj jeszcze raz";
+}
 
 // zadanie 4
 let l1 = prompt("Podaj liczbę 1: ");
