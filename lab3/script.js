@@ -46,6 +46,7 @@ if (rand == L) {
 }
 
 // zadanie 4
+
 let l1 = prompt("Podaj liczbę 1: ");
 let l2 = prompt("Podaj liczbę 2: ");
 let l3 = prompt("Podaj liczbę 2: ");
