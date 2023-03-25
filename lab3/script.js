@@ -46,3 +46,11 @@ document.getElementById("P").innerHTML = "Pole trójkąta wynosi: " + P;
 // }
 
 // zadanie 4
+let l1 = prompt("Podaj liczbę 1: ");
+let l2 = prompt("Podaj liczbę 2: ");
+let l3 = prompt("Podaj liczbę 2: ");
+let max = Math.max(parseFloat(l1), parseFloat(l2), parseFloat(l3));
+
+console.log(max);
+document.getElementById("max").innerHTML =
+  "najwyższa liczba z podanych to: " + max;
