@@ -1,0 +1,39 @@
+header {
+    position: sticky;
+    background-color: lightgray;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 0 0 10px 2px #aaa;
+    padding: 20px 120px;
+    z-index: 100;
+    display: flex;
+}
+
+ul {
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 30px;
+}
