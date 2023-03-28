@@ -70,7 +70,7 @@ let wynik = nwd(p, q);
 console.log("NWD(" + p + "," + q + ") = " + wynik);
 
 document.getElementById("NWD").innerHTML =
-  "Najwiekszy wspolny dzielnik z " + p + "," + q + " = " + wynik;
+  "Najwiekszy wspolny dzielnik z " + p + ", " + q + " = " + wynik;
 
 //Zadanie 6
 
