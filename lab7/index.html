@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>form</title>
+      <style>
+          form {
+              width: 500px;
+              margin: 0 auto;
+              padding: 20px;
+              border: 5px solid #ccc;
+          }
+      </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Imię:</label><br />
+      <input type="text" id="name" placeholder="Wpisz imię" />
+      <br />
+      <label for="lastname">Nazwisko:</label><br />
+      <input type="text" id="lastname" placeholder="Wpisz nazwisko" />
+      <br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" placeholder="Wpisz email" />
+      <br />
+      <label for="password">Hasło:</label><br />
+      <input type="password" id="password" placeholder="Wpisz hasło" title="Minimum 8 znaków"/>
+      <br />
+      <label for="repassword">Powtórz hasło:</label><br />
+      <input type="password" id="repassword" placeholder="powtórz hasło" title="Minimum 8 znaków"/>
+      <br />
+      <label for="gender">Płeć:</label><br />
+      <input type="radio" id="gender" value="male" />Mężczyzna
+      <input type="radio" id="gender" value="female" />Kobieta
+      <br />
+      <label for="phone">Telefon:</label><br />
+      <input type="tel" id="phone" placeholder="Wpisz numer telefonu" />
+      <br />
+      <label for="date">Data urodzenia:</label><br />
+      <input type="date" id="date" />
+      <br />
+      <label for="country">Kraj:</label><br />
+      <input type="text" id="country" placeholder="Wpisz kraj" />
+      <br />
+      <input type="submit" value="Zapisz" onclick="validateForm()"/>
+    </form>
+    <script>
+      function validateForm() {
+        let name = document.forms["myForm"]["name"].value;
+        let lastname = document.forms["myForm"]["lastname"].value;
+        let email = document.forms["myForm"]["email"].value;
+        let password = document.forms["myForm"]["password"].value;
+        let birthdate = document.forms["myForm"]["date"].value;
+
+        // Sprawdź wartość pola name
+        if (name === "") {
+          document.forms["myForm"]["name"].setCustomValidity(
+            "Proszę wprowadzić imię!"
+          );
+        } else {
+          document.forms["myForm"]["name"].setCustomValidity("");
+        }
+
+        // Sprawdź długość znaków pola name
+        if (name.length < 3) {
+          document.forms["myForm"]["name"].setCustomValidity(
+            "Imię musi zawierać minimum 3 znaki!"
+          );
+        } else {
+          document.forms["myForm"]["name"].setCustomValidity("");
+        }
+
+        // Sprawdź wartość pola lastname
+        if (lastname === "") {
+          document.forms["myForm"]["lastname"].setCustomValidity(
+            "Proszę wprowadzić imię!"
+          );
+        } else {
+          document.forms["myForm"]["lastname"].setCustomValidity("");
+        }
+
+        // Sprawdź długość znaków pola lastname
+        if (lastname.length < 3) {
+          document.forms["myForm"]["lastname"].setCustomValidity(
+            "Imię musi zawierać minimum 3 znaki!"
+          );
+        } else {
+          document.forms["myForm"]["lastname"].setCustomValidity("");
+        }
+
+        // Sprawdź poprawność email
+        let emailregex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        if (emailregex.test(email) === false) {
+            document.forms["myForm"]["email"].setCustomValidity("Adres email jest niepoprawny!");
+        } else {
+            document.forms["myForm"]["email"].setCustomValidity("");
+        }
+
+        // Sprawdź trudność hasła
+        let passregex = /^[a-zA-Z0-9!@#$%^&*]{8,}$/;
+        if (passregex.test(password) === false) {
+            document.forms["myForm"]["password"].setCustomValidity("Hasło musi zawierać minimum 8 znaków oraz znaki specjalne!");
+        } else {
+            document.forms["myForm"]["password"].setCustomValidity("");
+        }
+
+        // Sprawdź czy pełnoletni
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            document.forms["myForm"]["date"].setCustomValidity("osoba niepełnoletnia!");
+        } else {
+            document.forms["myForm"]["date"].setCustomValidity("");
+       }
+
+        // Wyświetl alert, gdy formularz jest poprawnie wypełniony
+        if (name != "" && lastname != "" && email != "" && password != "") {
+          alert("Formularz poprawnie wypełniony!");
+        }
+      }
+    </script>
+  </body>
+</html>

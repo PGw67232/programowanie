@@ -21,7 +21,7 @@ class prostokat {
   }
 
   comp(other) {
-    if (this.pole() > other.pole()){
+    if (this.pole() > other.pole()) {
       return this.name;
     } else {
       return other.name;
